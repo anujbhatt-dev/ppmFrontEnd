@@ -1,4 +1,5 @@
- import React, {Component} from "react"
+ import React, {Component} from "react";
+ import {Link} from "react-router-dom";
 
 
  class NavItem extends Component{
@@ -7,8 +8,8 @@
 
      return (
       <div className="nav__items">
-         <div className="nav__items-item">signUp</div>
-         <div className="nav__items-item">logIn</div>
+         <Link to="/signup" className="nav__items-item">signUp</Link>
+         <Link to="/login" className="nav__items-item">logIn</Link>
       </div>
      )
    }
