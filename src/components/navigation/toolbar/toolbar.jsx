@@ -4,7 +4,6 @@ import NavItems from "./nav-items/nav-items"
  class Toolbar  extends Component{
 
    render(){
-      console.log(this.props.classes);
      return (
         <div className={this.props.classes[0]}>
                <NavItems classes={this.props.classes[1]} toggleSideDrawer={this.props.toggleSideDrawer}/>

@@ -1,10 +1,11 @@
 import React, {Component,Fragment} from "react"
 import Toolbar from "../navigation/toolbar/toolbar";
 import SideDrawer from "../navigation/side-drawer/side-drawer";
+import Main from "../main/main";
 
 class Layout extends Component{
   state={
-    sideDrawer:["sideDrawer","close"],
+    sideDrawer:null,
     toolbar:["toolbar","closeToolbar"],
     toggle:true
   }
@@ -29,14 +30,20 @@ class Layout extends Component{
      }
    }
 
-   render(){
 
+
+   render(){
+     let sideDrawer = null;
+     if(this.state.sideDrawer){
+        sideDrawer = <SideDrawer classes={this.state.sideDrawer}/>
+
+     }
      return (
        <Fragment>
           <Toolbar classes={this.state.toolbar} toggleSideDrawer={this.sideDrawerToggleHandler}/>
-          <SideDrawer classes={this.state.sideDrawer}/>
+           {sideDrawer}
           <div>modal</div>
-          <div>main</div>
+          <Main/>
        </Fragment>
      )
   }
